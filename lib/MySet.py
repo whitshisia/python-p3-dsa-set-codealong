@@ -5,7 +5,12 @@ class MySet:
               self.dictionary[value] = True
       def has(self, value):
            return value in self.dictionary
-       
+      def __str__(self):
+        set_list = []
+        for key, value in self.dictionary.items():
+            set_list.append(str(key))
+        return f'MySet: {{{",".join(set_list)}}}'    
+      
       def add(self, value):
           self.dictionary[value] = True
           return self
@@ -18,8 +23,7 @@ class MySet:
           return len(self.dictionary)
       
       def clear(self):
-          self.dictionary = {}
-          return self
-      
-      def __str__(self):
-          return 'MySet: ' + str(self.dictionary)
+          self.dictionary.clear()
+          
+       
+    
